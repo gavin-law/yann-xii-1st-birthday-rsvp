@@ -5,6 +5,7 @@ const AUDIO_URL = import.meta.env.BASE_URL + 'melody.mp3'
 export default function MusicToggle() {
   const audioRef = useRef(null)
   const startingRef = useRef(false)
+  const userMutedRef = useRef(false)
   const [playing, setPlaying] = useState(false)
 
   useEffect(() => {
@@ -14,7 +15,16 @@ export default function MusicToggle() {
     audio.preload = 'auto'
     audioRef.current = audio
 
-    const onPlay = () => setPlaying(true)
+    const events = ['pointerdown', 'keydown', 'scroll', 'touchstart']
+    const removeUnlock = () => {
+      events.forEach((ev) => window.removeEventListener(ev, unlock))
+    }
+
+    const onPlay = () => {
+      setPlaying(true)
+      // Autoplay unlock is done — don't resume on later page interactions.
+      removeUnlock()
+    }
     const onPause = () => setPlaying(false)
     audio.addEventListener('play', onPlay)
     audio.addEventListener('playing', onPlay)
@@ -23,7 +33,7 @@ export default function MusicToggle() {
     // Idempotent play — avoids overlapping play() calls (AbortError).
     const safePlay = async () => {
       const a = audioRef.current
-      if (!a || !a.paused || startingRef.current) return
+      if (!a || !a.paused || startingRef.current || userMutedRef.current) return
       startingRef.current = true
       try {
         await a.play()
@@ -35,8 +45,10 @@ export default function MusicToggle() {
     }
     audioRef.current._safePlay = safePlay
 
-    const events = ['pointerdown', 'keydown', 'scroll', 'touchstart']
-    const unlock = () => safePlay()
+    function unlock() {
+      if (userMutedRef.current) return
+      safePlay()
+    }
 
     // Try to play on entry; if blocked, start on the visitor's first
     // tap / click / scroll / key press anywhere on the page.
@@ -44,7 +56,7 @@ export default function MusicToggle() {
     events.forEach((ev) => window.addEventListener(ev, unlock, { passive: true }))
 
     return () => {
-      events.forEach((ev) => window.removeEventListener(ev, unlock))
+      removeUnlock()
       audio.removeEventListener('play', onPlay)
       audio.removeEventListener('playing', onPlay)
       audio.removeEventListener('pause', onPause)
@@ -55,8 +67,13 @@ export default function MusicToggle() {
   const toggle = () => {
     const a = audioRef.current
     if (!a) return
-    if (a.paused) a._safePlay && a._safePlay()
-    else a.pause()
+    if (a.paused) {
+      userMutedRef.current = false
+      a._safePlay && a._safePlay()
+    } else {
+      userMutedRef.current = true
+      a.pause()
+    }
   }
 
   return (
