@@ -1,0 +1,23 @@
+{
+  "name": "yann-xu-rsvp",
+  "version": "2.0.0",
+  "description": "RSVP site for Yann Xu's 1st Birthday. Responses go straight to Google Sheets.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "serve": "npm run build && npm start"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}
