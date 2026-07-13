@@ -21,7 +21,6 @@ var HEADERS = [
   'Children',
   'Babies',
   'Baby chair',
-  'Dietary / allergies',
 ]
 
 /** Creates the RSVPs tab + header row if they don't exist yet. */
@@ -61,7 +60,6 @@ function doPost(e) {
       going ? Number(data.children) || 0 : 0,
       going ? Number(data.babies) || 0 : 0,
       going ? (data.baby_chair === 'yes' ? 'Yes' : 'No') : '',
-      going ? data.dietary || '' : '',
     ])
     var row = sheet.getLastRow()
     sheet.getRange(row, 3).setNumberFormat('@').setValue(contact)

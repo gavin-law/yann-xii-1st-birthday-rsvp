@@ -41,7 +41,6 @@ export default function RsvpForm() {
     children: 0,
     babies: 0,
     baby_chair: 'no',
-    dietary: '',
   })
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
@@ -70,7 +69,6 @@ export default function RsvpForm() {
         children: going ? form.children : 0,
         babies: going ? form.babies : 0,
         baby_chair: going ? form.baby_chair : 'no',
-        dietary: going ? form.dietary.trim() : '',
       })
       setDone(true)
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -248,19 +246,6 @@ export default function RsvpForm() {
                     No, thank you 不需要
                   </button>
                 </div>
-              </div>
-
-              <div className="field">
-                <label htmlFor="dietary">
-                  Any dietary restrictions or food allergies? <span className="zh">饮食禁忌或食物过敏？</span>{' '}
-                  <span className="hint">— optional 选填</span>
-                </label>
-                <textarea
-                  id="dietary"
-                  placeholder="e.g. vegetarian, no nuts, no seafood 例如：素食、不吃坚果、不吃海鲜…"
-                  value={form.dietary}
-                  onChange={(e) => set({ dietary: e.target.value })}
-                />
               </div>
             </div>
           )}

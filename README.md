@@ -60,7 +60,7 @@ folder directly and doesn't use the Node server.)
 ## Managing responses
 
 Everything lives in your Google Sheet — each row is one RSVP with a timestamp
-(Name, Contact, Attending, Adults, Children, Babies, Baby chair, Dietary). Sort,
+(Name, Contact, Attending, Adults, Children, Babies, Baby chair). Sort,
 filter, add your own Status/Notes columns, or pivot for head counts.
 
 ---
