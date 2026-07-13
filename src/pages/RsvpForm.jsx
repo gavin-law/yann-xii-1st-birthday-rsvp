@@ -10,7 +10,6 @@ const EVENT = {
   time: '3:00 PM – 6:00 PM',
   venue: 'Ssavoury Restaurant & Event Space',
   dress: 'Baby Blue, Baby Pink or White',
-  dressZh: '宝宝蓝、宝宝粉或白色',
   google: 'https://maps.app.goo.gl/qNY65p386RxHSGWc8',
   waze: 'https://waze.com/ul/hw2838fenn',
 }
@@ -146,7 +145,6 @@ export default function RsvpForm() {
             <div>
               <div className="t">Dress code <span className="tzh">着装</span></div>
               <div className="v">{EVENT.dress}</div>
-              <div className="vzh">{EVENT.dressZh}</div>
             </div>
           </div>
         </div>
