@@ -413,6 +413,12 @@ textarea::placeholder {
   font-size: 12px;
   padding: 4px 26px 22px;
 }
+.footnote-emoji {
+  display: block;
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 1;
+}
 .footnote a {
   color: var(--lavender-deep);
   text-decoration: none;
@@ -845,7 +851,13 @@ textarea::placeholder {
   box-shadow: var(--shadow-soft);
 }
 .mapbtn .mapic {
-  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.mapbtn .mapic svg {
+  display: block;
 }
 .mapbtn .mzh {
   color: var(--ink-soft);

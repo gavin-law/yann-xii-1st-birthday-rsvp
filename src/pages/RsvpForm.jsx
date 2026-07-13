@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { submitRsvp } from '../api.js'
-import { Calendar, Clock, Pin, Heart } from '../components/Icons.jsx'
+import { Calendar, Clock, Pin, Heart, GoogleMaps, Waze } from '../components/Icons.jsx'
 
 const POSTER = import.meta.env.BASE_URL + 'poster.png'
 
@@ -112,7 +112,7 @@ export default function RsvpForm() {
         </div>
 
         <div className="intro">
-          <div className="eyebrow">You're warmly invited to</div>
+          <div className="eyebrow">You're warmly invited</div>
           <div className="eyebrow-zh">诚挚邀请您出席</div>
         </div>
 
@@ -149,10 +149,10 @@ export default function RsvpForm() {
 
         <div className="maps">
           <a className="mapbtn g" href={EVENT.google} target="_blank" rel="noopener noreferrer">
-            <span className="mapic">📍</span> Google Maps <span className="mzh">地图导航</span>
+            <span className="mapic"><GoogleMaps /></span> Google Maps 
           </a>
           <a className="mapbtn w" href={EVENT.waze} target="_blank" rel="noopener noreferrer">
-            <span className="mapic">🧭</span> Waze <span className="mzh">导航</span>
+            <span className="mapic"><Waze /></span> Waze
           </a>
         </div>
 
@@ -168,7 +168,7 @@ export default function RsvpForm() {
             <input
               id="name"
               type="text"
-              placeholder="Your full name 您的姓名"
+              placeholder="Your name 您的姓名"
               value={form.name}
               onChange={(e) => set({ name: e.target.value })}
             />
@@ -257,7 +257,10 @@ export default function RsvpForm() {
           </button>
         </form>
 
-        <div className="footnote">With love, from Gavin &amp; June 🎠</div>
+        <div className="footnote">
+          With love, from Gavin &amp; June
+          <span className="footnote-emoji" aria-hidden="true">🎠</span>
+        </div>
       </div>
     </div>
   )
