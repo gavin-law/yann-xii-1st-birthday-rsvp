@@ -86,17 +86,17 @@ export default function RsvpForm() {
       <div className="page">
         <div className="card">
           <div className="cover">
-            <img src={POSTER} alt="Yann Xü is turning one" />
+            <img src={POSTER} alt="Yann Xii is turning one" />
           </div>
           <div className="thanks">
             <div className="crown">👑</div>
             <h2>Thank you!</h2>
             <div className="thanks-zh">谢谢您！</div>
             <p>
-              Your RSVP for Yann Xü's 1st birthday has been received. We can't wait to celebrate
+              Your RSVP for Yann Xii's 1st birthday has been received. We can't wait to celebrate
               this magical day with you on {EVENT.date}.
             </p>
-            <p className="p-zh">我们已收到您的回复，期待与您共度 Yann Xü 的一周岁生日！</p>
+            <p className="p-zh">我们已收到您的回复，期待与您共度 Yann Xii 的一周岁生日！</p>
             <button className="ghost" onClick={() => window.location.reload()}>
               Submit another response 再填写一份
             </button>
@@ -110,7 +110,7 @@ export default function RsvpForm() {
     <div className="page">
       <div className="card">
         <div className="cover">
-          <img src={POSTER} alt="Yann Xü is turning one — 1st birthday celebration" />
+          <img src={POSTER} alt="Yann Xii is turning one — 1st birthday celebration" />
         </div>
 
         <div className="intro">

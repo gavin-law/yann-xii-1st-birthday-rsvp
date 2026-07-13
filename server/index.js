@@ -60,5 +60,5 @@ const server = http.createServer((req, res) => {
 })
 
 server.listen(PORT, () => {
-  console.log(`\n  Yann Xu RSVP running on http://localhost:${PORT}\n`)
+  console.log(`\n  Yann Xii RSVP running on http://localhost:${PORT}\n`)
 })

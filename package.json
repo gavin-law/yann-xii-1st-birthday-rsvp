@@ -1,7 +1,7 @@
 {
   "name": "yann-xu-rsvp",
   "version": "2.0.0",
-  "description": "RSVP site for Yann Xu's 1st Birthday. Responses go straight to Google Sheets.",
+  "description": "RSVP site for Yann Xii's 1st Birthday. Responses go straight to Google Sheets.",
   "type": "module",
   "engines": {
     "node": ">=20"

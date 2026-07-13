@@ -1,4 +1,4 @@
-# Yann Xü · 1st Birthday RSVP
+# Yann Xii · 1st Birthday RSVP
 
 A bilingual (English / 中文) RSVP site. Responses are written straight into your
 Google Sheet — no database, no server logic. Includes background music and a
