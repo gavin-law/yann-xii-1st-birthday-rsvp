@@ -9,8 +9,8 @@ const EVENT = {
   date: '29 August 2026',
   time: '3:00 PM – 6:00 PM',
   venue: 'Ssavoury Restaurant & Event Space',
-  dress: 'Soft Purple, Pink or Blue',
-  dressZh: '浅紫色、粉色、蓝色',
+  dress: 'Baby Blue, Baby Pink or White',
+  dressZh: '宝宝蓝、宝宝粉或白色',
   google: 'https://maps.app.goo.gl/qNY65p386RxHSGWc8',
   waze: 'https://waze.com/ul/hw2838fenn',
 }
